@@ -1,6 +1,6 @@
 # Solutions to Challenges
 
-Name: PLACE_NAME_HERE
+Name: Jop Bouckaert
 
 ## Instructions
 
