@@ -25,10 +25,25 @@ int fclose( FILE *fp );
 
 * open an i2c device:
 ```c
+int file;
+char *filename = "/dev/i2c-2";
+if ((file = open(filename, O_RDWR)) < 0) {
+    /* ERROR HANDLING: you can check errno to see what went wrong */
+    perror("Failed to open the i2c bus");
+    exit(1);
+}
 ```
 
 * write to an i2c device
 ```c
+buf[0] = 0b11110000;
+if (write(file,buf,1) != 1) {
+    /* ERROR HANDLING: i2c transaction failed */
+    printf("Failed to write to the i2c bus.\n");
+    buffer = g_strerror(errno);
+    printf(buffer);
+    printf("\n\n");
+}
 ```
 
 * close the i2c device
@@ -37,10 +52,27 @@ int fclose( FILE *fp );
 
 * create a child process / copy of current proces:
 ```c
+#include <stdio.h> 
+#include <sys/types.h> 
+int main() 
+{ 
+    fork(); 
+    fork(); 
+    fork(); 
+    printf("hello\n"); 
+    return 0; 
+} 
 ```
 
 * create a file
 ```c
+#include<stdio.h>
+int main(){
+FILE *fp;
+fp=fopen("file.txt","w");
+fclose(fp);
+return 0;
+}
 ```
 
 #### What do you notice about the functions interact with a file and those to interact with an i2c device?
