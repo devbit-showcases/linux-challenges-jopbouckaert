@@ -18,3 +18,5 @@ Happy Hacking.
 ## Overview
 1. [Introduction to Linux challenges](IntroductionToLinux.md)
 2. [Linux on the Raspberry Pi challenges](LinuxOnTheRaspberryPi.md)
+3. [Getting around in Linux](GettingAroundInLinux.md)
+4. [OverTheWire solutions](OverTheWire.md)
