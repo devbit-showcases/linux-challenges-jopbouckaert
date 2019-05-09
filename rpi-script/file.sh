@@ -2,6 +2,7 @@
 flag=false
 valid=false
 i=0
+mac_long=""
 touch ./filter.txt
 file="./filter.txt"
 
@@ -33,6 +34,7 @@ do
     fi
     if [[ "$flag" = true && "$valid" = true ]]; then
          echo "[${date}] ${mac} => ${ip}";
+         curl -H 'Content-Type: application/json' -X POST -d "{\"update\":{\"mac\":\"${mac}\",\"ip_address\":\"${ip}\"}}" http://172.16.102.20:3000/updates.json -o ./jsondump.txt > /dev/null 2>&1
          flag=false;
          valid=false;
     fi
