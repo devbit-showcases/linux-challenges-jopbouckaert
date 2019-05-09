@@ -8,7 +8,7 @@ file="./filter.txt"
 
 while :
 do
-    tail -n 3 ./output.txt > ./filter.txt
+    tail -n 4 ./output.txt > ./filter.txt
     while IFS= read line; do
         i=$((i+1))
         if [ "${i}" = "1" ];
@@ -27,14 +27,17 @@ do
         elif [ "${i}" = "3" ];
         then
             ip=$line
+        elif [ "${i}" = "4" ];
+        then
+            name=$line
         fi
     done < "$file"
     if [[ $ip =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
         valid=true
     fi
     if [[ "$flag" = true && "$valid" = true ]]; then
-         echo "[${date}] ${mac} => ${ip}";
-         curl -H 'Content-Type: application/json' -X POST -d "{\"update\":{\"mac\":\"${mac}\",\"ip_address\":\"${ip}\"}}" http://172.16.102.20:3000/updates.json -o ./jsondump.txt > /dev/null 2>&1
+         echo "[${date}] ${mac} => ${ip} from ${name}";
+         curl -H 'Content-Type: application/json' -X POST -d "{\"update\":{\"name\":\"${name}\",\"mac\":\"${mac}\",\"ip_address\":\"${ip}\"}}" http://172.16.102.20:3000/updates.json -o ./jsondump.txt > /dev/null 2>&1
          flag=false;
          valid=false;
     fi
