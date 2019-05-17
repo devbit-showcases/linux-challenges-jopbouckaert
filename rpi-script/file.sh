@@ -37,7 +37,7 @@ do
     fi
     if [[ "$flag" = true && "$valid" = true ]]; then
          echo "[${date}] ${mac} => ${ip} from ${name}";
-         curl -H 'Content-Type: application/json' -X POST -d "{\"update\":{\"name\":\"${name}\",\"mac\":\"${mac}\",\"ip_address\":\"${ip}\"}}" http://172.16.102.20:3000/updates.json -o ./jsondump.txt > /dev/null 2>&1
+         curl -H 'Content-Type: application/json' -X POST -d "{\"update\":{\"name\":\"${name}\",\"mac\":\"${mac}\",\"ip_address\":\"${ip}\"}}" http://mydevices.labict.xyz/updates.json -o ./jsondump.txt > /dev/null 2>&1
          flag=false;
          valid=false;
     fi
