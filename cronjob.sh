@@ -42,4 +42,4 @@ curl -H 'Content-Type: application/json' -X POST -d
     \"hostname\": \"${HOSTNAME}\",
     \"uptime\": \"${UPTIME}\"
     }" 
-    http://mydevices.labict.xyz/stats.json -o ./jsondump.txt > /dev/null 2>&1
+    http://mydevices.labict.xyz/stats.json -o /home/jop/linux_projects/linux-challenges-jopbouckaert/statlog.txt > /dev/null 2>&1
