@@ -8,9 +8,6 @@ KERNEL=$(uname -r)
 HOSTNAME=$(cat /etc/hostname)
 UPTIME=$(uptime -p)
 
-echo ${MAC}
-
-
 echo "{
   \"mac\": \"${MAC}\",
   \"disk\": {
