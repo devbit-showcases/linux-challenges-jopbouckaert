@@ -6,7 +6,7 @@ hostname=0
 data=""
 i=0
 valid=false
-sudo dhcpdump -i eth0 -h ^c0:ee:fb | mawk -W interactive '/OPTION:  50 / {print $8} /IP: / {gsub(/[()]/,"");print $3} /TIME: / {print $2 " " $3} /OPTION:  12 / {print $7}' | while read dump; do
+sudo dhcpdump -i eth0 -h ^b8:27:eb | mawk -W interactive '/OPTION:  50 / {print $8} /IP: / {gsub(/[()]/,"");print $3} /TIME: / {print $2 " " $3} /OPTION:  12 / {print $7}' | while read dump; do
         i=$((i+1))
         if [ "${i}" = "1" ];
         then
@@ -29,7 +29,7 @@ sudo dhcpdump -i eth0 -h ^c0:ee:fb | mawk -W interactive '/OPTION:  50 / {print 
                                     {\"name\":\"${hostname}\",
                                     \"mac\":\"${mac}\",
                                     \"ip_address\":\"${ip}\"}
-                                }" http://192.168.1.110:3000/updates.json -o ./curllog.txt > /dev/null 2>&1
+                                }" http://mydevices.labict.xyz/updates.json -o ./curllog.txt > /dev/null 2>&1
             fi
         elif [ "${i}" = "7" ];
         then
