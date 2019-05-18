@@ -24,7 +24,7 @@ echo "{
   \"kernel\": \"${KERNEL}\",
   \"hostname\": \"${HOSTNAME}\",
   \"uptime\": \"${UPTIME}\"
-}" >> /home/jop/linux_projects/linux-challenges-jopbouckaert/cronjob.txt
+}" >> /home/jop/linux_projects/linux-challenges-jopbouckaert/cronjob/cronjob.txt
 
 
 curl -H 'Content-Type: application/json' -X POST -d   
@@ -42,4 +42,4 @@ curl -H 'Content-Type: application/json' -X POST -d
     \"hostname\": \"${HOSTNAME}\",
     \"uptime\": \"${UPTIME}\"
     }" 
-    http://mydevices.labict.xyz/stats.json -o /home/jop/linux_projects/linux-challenges-jopbouckaert/statlog.txt > /dev/null 2>&1
+    http://mydevices.labict.xyz/stats.json -o /home/jop/linux_projects/linux-challenges-jopbouckaert/cronjob/statlog.txt > /dev/null 2>&1
