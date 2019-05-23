@@ -9,7 +9,7 @@ HOSTNAME=$(cat /etc/hostname)
 UPTIME=$(uptime -p)
 
 echo "{
-    \"stat\": {
+\"stat\": {
   \"mac\": \"${MAC}\",
   \"disk\": {
     \"free\": \"${FREEDISK}\",
@@ -22,7 +22,8 @@ echo "{
   \"kernel\": \"${KERNEL}\",
   \"hostname\": \"${HOSTNAME}\",
   \"uptime\": \"${UPTIME}\"
-}}" >> /home/jop/linux_projects/linux-challenges-jopbouckaert/cronjob/cronjob.txt
+  }
+}" >> /home/jop/linux_projects/linux-challenges-jopbouckaert/cronjob/cronjob.txt
 
 
-curl --header 'Content-Type: application/json' --request POST -d "{\"stat\":{\"mac\": \"${MAC}\",\"disk\": {\"free\": \"${FREEDISK}\",\"total\": \"${TOTALDISK}\"},\"memory\": {\"free\": \"${FREERAM}\",\"total\": \"${TOTALRAM}\"},\"kernel\": \"${KERNEL}\",\"hostname\": \"${HOSTNAME}\",\"uptime\": \"${UPTIME}\"}}" http://mydevices.labict.xyz/stats.json >> statlog.txt
+curl --header 'Content-Type: application/json' -w "\n" --request POST -d "{\"stat\":{\"mac\": \"${MAC}\",\"disk\": {\"free\": \"${FREEDISK}\",\"total\": \"${TOTALDISK}\"},\"memory\": {\"free\": \"${FREERAM}\",\"total\": \"${TOTALRAM}\"},\"kernel\": \"${KERNEL}\",\"hostname\": \"${HOSTNAME}\",\"uptime\": \"${UPTIME}\"}}" http://mydevices.labict.xyz/stats.json 2> /dev/null >> ./statlog.txt

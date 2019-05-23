@@ -13,8 +13,8 @@ sudo dhcpdump -i eth0 -h ^b8:27:eb | while read dump; do
           hostname=$(echo $dump | mawk -W interactive '{print $7}')
           ;;
      *-----*)
-            echo "[${time}] ${mac} => ${ip} from ${hostname}" | tee ./devicelog.txt;
-            curl --header 'Content-Type: application/json' --request POST -d "{\"update\":{\"name\":\"${name}\",\"mac\":\"${mac}\",\"ip_address\":\"${ip}\"}}" http://mydevices.labict.xyz/updates.json 2> /dev/null >> ./curllog.txt
+            echo "[${time}] ${mac} => ${ip} from ${hostname}" && echo "[${time}] ${mac} => ${ip} from ${hostname}" >> ./devicelog.txt;
+            curl --header 'Content-Type: application/json' -w "\n" --request POST -d "{\"update\":{\"name\":\"${name}\",\"mac\":\"${mac}\",\"ip_address\":\"${ip}\"}}" http://mydevices.labict.xyz/updates.json 2> /dev/null >> ./curllog.txt
           ;;
      *)
     esac
