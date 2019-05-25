@@ -23,6 +23,15 @@
 | bandit18 | `kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd` |
 | bandit19 | `IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x` |
 | bandit20 | `GbKksEFF4yrVs6il55v6gwY5aVje5f0j` |
-| bandit21 | `Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI` |
-| bandit22 | `jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n` |
-| bandit23 | `UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ` |
+| bandit21 | `gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr` |
+| bandit22 | `Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI` |
+| bandit23 | `jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n` |
+| bandit24 | `UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ` |
+| bandit25 | `uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG` |
+| bandit26 | `5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z` |
+| bandit27 | `3ba3118a22e93127a4ed485be72ef5ea` |
+| bandit28 | `0ef186ac70e04ea33b4c1853d2526fa2` |
+| bandit29 | `bbc96594b4e001778eee9975372716b2` |
+| bandit30 | `5b90576bedb2cc04c86a9e924ce42faf` |
+
+=> No more time to do the rest of the solutions.
