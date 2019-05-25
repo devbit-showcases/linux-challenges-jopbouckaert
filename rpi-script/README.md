@@ -19,6 +19,18 @@ chmod +x ./script.sh
 ./script.sh
 ```
 
+## Output
+
+This script will output into two files.
+
+1. Device log:
+
+    The `devicelog.txt` contains all the devices that has been found.
+
+2. Curl log:
+
+    The `curllog.txt` contains all the responses from the `my-devices` API.
+
 ## Meta
 
 Jop Bouckaert – [@Jop09071999](https://twitter.com/Jop09071999) – jop.bouckaert@outlook.com
